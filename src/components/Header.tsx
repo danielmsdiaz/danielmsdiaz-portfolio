@@ -1,6 +1,10 @@
+import ThemeToggler from "./ThemeToggler"
+
 const Header = () => {
   return (
-    <header className="bg-green-300">Header</header>
+    <header>
+      <ThemeToggler/>
+    </header>
   )
 }
 
