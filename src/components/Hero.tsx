@@ -3,6 +3,7 @@ import { Button } from "./ui/button"
 import { Download, Send } from "lucide-react"
 import { RiTodoFill, RiBriefcase4Fill, RiTeamFill, RiArrowDownSLine } from "react-icons/ri"
 import Socials from "./Socials"
+import DevImg from "./DevImg"
 
 const Hero = () => {
     return (
@@ -29,10 +30,11 @@ const Hero = () => {
                     </div>
                     <div className="hidden xl:flex relative">
                         <div className="bg-hero_shape_light_2 dark:bg-hero_shape_dark_2 bg-no-repeat w-[500px] h-[500px] -top-1 -right-3">
+                            <DevImg />
                         </div>
                     </div>
                 </div>
-                <div className="hidden md:flex absolute left-2/4 bottom-44 xl:bottom-12 animate-bounce">
+                <div className="hidden xl:flex absolute left-2/4 bottom-44 xl:bottom-12 animate-bounce">
                     <RiArrowDownSLine className="text-3xl text-primary dark:text-darkMode" />
                 </div>
             </div>
