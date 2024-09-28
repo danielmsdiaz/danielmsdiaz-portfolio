@@ -14,11 +14,11 @@ const Hero = () => {
                         <div className="text-sm uppercase font-bold mb-4 text-primary dark:text-darkMode tracking-[4px]">Web Developer</div>
                         <h1 className="h1">Hello, my name is Daniel Diaz</h1>
                         <p className="mt-4 subtitle max-w-[400px] mx-auto xl:mx-0">
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         </p>
                         <div className="flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12">
                             <Link href="/contact">
-                                <Button className="gap-x-2 text-base">
+                                <Button className="gap-x-4 text-base px-6">
                                     Contact me <Send size={18} />
                                 </Button>
                             </Link>
