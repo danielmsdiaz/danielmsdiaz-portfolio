@@ -1,9 +1,12 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { Download, Send } from "lucide-react"
 import { RiTodoFill, RiBriefcase4Fill, RiTeamFill, RiArrowDownSLine } from "react-icons/ri"
 import Socials from "./Socials"
 import DevImg from "./DevImg"
+import HeroStart from "./HeroAnimation"
 
 const Hero = () => {
     return (
@@ -11,7 +14,7 @@ const Hero = () => {
             <div className="container mx-auto px-4">
                 <div className="flex justify-between gap-x-8">
                     <div className="flex flex-col max-w-[600px] justify-center mx-auto xl:mx-0 text-center xl:text-left">
-                        <div className="text-sm uppercase font-bold mb-4 text-primary dark:text-darkMode tracking-[4px]">Web Developer</div>
+                        <HeroStart/>
                         <h1 className="h1">Hello, my name is Daniel Diaz</h1>
                         <p className="mt-4 subtitle max-w-[400px] mx-auto xl:mx-0">
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit,

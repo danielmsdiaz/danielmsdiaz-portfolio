@@ -73,4 +73,20 @@
   .subtitle{
     @apply text-muted-foreground text-lg mb-8 dark:text-gray-400
   }
+
+  .section-title{
+    @apply text-4xl font-bold relative w-max flex items-center justify-between gap-x-3 before:bg-moon_light before:dark:bg-moon_dark before:bg-no-repeat before:bg-center before:w-[24px] before:h-[24px]
+  }
+
+  .h3{
+    @apply text-3xl font-bold
+  }
+
+  .h4{
+    @apply text-[220px] font-semibold
+  }
+
+  .h2{
+    @apply text-4xl font-bold
+  }
 }

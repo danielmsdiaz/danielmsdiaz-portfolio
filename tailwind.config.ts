@@ -8,12 +8,24 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1400px"
+    },
     extend: {
       backgroundImage: {
         hero: 'url(/hero/hero-bg.png)', // Imagem de fundo para o herói
         hero_shape: 'url(/hero/shape-1.svg)',
         hero_shape_light_2: 'url(/hero/shape-2-light.svg)',
-        hero_shape_dark_2: 'url(/hero/shape-2-dark.svg)'
+        hero_shape_dark_2: 'url(/hero/shape-2-dark.svg)',
+        moon_light: 'url(/about/light-moon.svg)',
+        moon_dark: 'url(/about/dark-moon.svg)',
       },
       colors: {
         background: 'hsl(var(--background))',
