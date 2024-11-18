@@ -6,8 +6,11 @@ import "swiper/css/pagination"
 import { Pagination } from "swiper/modules"
 import ProjectCard from "@/components/ProjectCard"
 import { Swiper, SwiperSlide } from "swiper/react"
+import Alert from "@/components/Alert"
+import { useState } from "react"
 
 const Projects = () => {
+    const [showAlert, setShowAlert] = useState<boolean>(false);
     return (
         <section className="relative mb-12 xl:mb-48">
             <div className="container mx-auto">
@@ -15,7 +18,10 @@ const Projects = () => {
                     <h2 className="section-title mb-4">Latest Projects</h2>
                     <p className="subtitle mb-8">Teste Teste Teste Teste TesteTeste Teste Teste Teste</p>
                     <Link href="/projects">
-                        <Button>All projects</Button>
+                        <Button onClick={(e) => {
+                            setShowAlert(true);
+                            e.preventDefault();
+                        }}>All projects</Button>
                     </Link>
                 </div>
                 <div className="xl:max-w-[1000px] xl:absolute right-0 top-0 xl:mr-10">
@@ -27,13 +33,16 @@ const Projects = () => {
                         {Array(6).fill(0).map((item, index) => {
                             return (
                                 <SwiperSlide key={index}>
-                                    <ProjectCard index={index}/>
+                                    <ProjectCard index={index} />
                                 </SwiperSlide>
                             );
                         })}
                     </Swiper>
                 </div>
             </div>
+            {showAlert &&
+                <Alert onClose={() => { setShowAlert(false) }} />
+            }
         </section>
     )
 }
