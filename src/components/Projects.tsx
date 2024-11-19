@@ -9,6 +9,45 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import Alert from "@/components/Alert"
 import { useState } from "react"
 
+export interface Project {
+    name: string,
+    description: string,
+    imgPath: string,
+    stack: string[],
+    status: "COMPLETED" | "NOT_COMPLETED" | "IN_PROGRESS",
+}
+
+const projectsList: Project[] = [
+    {
+        name: "Raíssa Sushi",
+        description: "teste teste tetet etete",
+        imgPath: "/projects/sushi_light.png",
+        stack: ["NextJs", "Tailwindcss", "Shadcn"],
+        status: "IN_PROGRESS",
+    },
+    {
+        name: "IMC Calculator",
+        description: "teste teste tetet etete",
+        imgPath: "/projects/imc.png",
+        stack: ["Reactjs"],
+        status: "IN_PROGRESS",
+    },
+    {
+        name: "Workout Gerenciator",
+        description: "teste teste tetet etete",
+        imgPath: "/projects/train.png",
+        stack: ["Nextjs", "Tailwindcss", "NodeJs", "Express", "postgres"],
+        status: "NOT_COMPLETED",
+    },
+    {
+        name: "Nunes Sports",
+        description: "teste teste tetet etete",
+        imgPath: "/projects/sports.png",
+        stack: ["ReactJs", "Tailwindcss", "PrimeReact UI"],
+        status: "COMPLETED",
+    }
+];
+
 const Projects = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
     return (
@@ -25,15 +64,15 @@ const Projects = () => {
                     </Link>
                 </div>
                 <div className="xl:max-w-[1000px] xl:absolute right-0 top-0 xl:mr-10">
-                    <Swiper className="h-[480px]" slidesPerView={1} breakpoints={{
-                        640: {
+                    <Swiper className="h-[440px] rounded-xl" slidesPerView={1} breakpoints={{
+                        960: {
                             slidesPerView: 2
                         }
                     }} spaceBetween={30} modules={[Pagination]} pagination={{ clickable: true }}>
-                        {Array(6).fill(0).map((item, index) => {
+                        {projectsList.map((item, index) => {
                             return (
                                 <SwiperSlide key={index}>
-                                    <ProjectCard index={index} />
+                                    <ProjectCard index={index} item={item} />
                                 </SwiperSlide>
                             );
                         })}

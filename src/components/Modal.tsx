@@ -1,5 +1,3 @@
-import { Copy } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -18,48 +16,70 @@ import { Textarea } from "@/components/ui/textarea"
 const Modal = ({ handleCloseModal }: { handleCloseModal: () => void }) => {
     return (
         <Dialog open onOpenChange={handleCloseModal}>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-[625px]">
                 <DialogHeader>
-                    <DialogTitle>Edit profile</DialogTitle>
+                    <DialogTitle>Create your review</DialogTitle>
                     <DialogDescription>
-                        Make changes to your profile here. Click save when you're done.
+                        What you want to say about me?
                     </DialogDescription>
                 </DialogHeader>
-                <div className="grid gap-4 py-4">
-                    <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="name" className="text-right">
-                            Name
-                        </Label>
-                        <Input
-                            id="name"
-                            placeholder="Your name"
-                            className="col-span-3"
-                        />
+                <div className="flex flex-col gap-y-4">
+                    <div className="grid grid-cols-2 justify-items-stretch gap-y-2">
+                        <div className="flex items-center gap-x-4">
+                            <Label htmlFor="name" className="text-left">
+                                Name
+                            </Label>
+                            <Input
+                                id="name"
+                                placeholder="Your name"
+                                className="col-span-3"
+                            />
+                        </div>
+                        <div className="grid grid-cols-4 items-center gap-4">
+                            <Label htmlFor="github" className="text-right">
+                                GitHub
+                            </Label>
+                            <Input
+                                id="github"
+                                placeholder="Your github"
+                                className="col-span-3"
+                            />
+                        </div>
+                        <div className="flex items-center gap-x-6">
+                            <Label htmlFor="role" className="text-left">
+                                Role
+                            </Label>
+                            <Input
+                                id="role"
+                                placeholder="Your role"
+                                className="col-span-3"
+                            />
+                        </div>
+                        <div className="grid grid-cols-4 items-center gap-4">
+                            <Label htmlFor="linkedin" className="text-right">
+                                Linkedin
+                            </Label>
+                            <Input
+                                id="linkedin"
+                                placeholder="Your linkedin"
+                                className="col-span-3"
+                            />
+                        </div>
                     </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="role" className="text-right">
-                            Role
-                        </Label>
-                        <Input
-                            id="role"
-                            placeholder="Your role"
-                            className="col-span-3"
-                        />
-                    </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
+                    <div>
                         <Label htmlFor="review" className="text-right">
                             Review
                         </Label>
                         <Textarea
                             id="review"
-                            placeholder="What you think about me?"
-                            className="col-span-3"
+                            placeholder="What do you think about me?"
+                            className="col-span-3 mt-2"
                         />
                     </div>
                 </div>
                 <DialogFooter>
                     <DialogClose asChild>
-                        <Button onClick={() => {alert("sda")}} type="submit">Save changes</Button>
+                        <Button onClick={() => { alert("sda") }} type="submit">Save changes</Button>
                     </DialogClose>
                 </DialogFooter>
             </DialogContent>

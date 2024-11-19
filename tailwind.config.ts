@@ -79,7 +79,7 @@ const config: Config = {
       },
     }
   },
-  plugins: [require("tailwindcss-animate")], // Plugin para animações no Tailwind CSS
+  plugins: [require("tailwindcss-animate"), require('tailwind-scrollbar')({ nocompatible: true, preferredStrategy: 'pseudoelements' })], // Plugin para animações no Tailwind CSS
 };
 
 export default config;

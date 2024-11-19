@@ -142,7 +142,7 @@ const About = () => {
   }
 
   return (
-    <section className="xl:h-[860px] pb-12 xl:py-24 mt-12">
+    <section className="xl:h-[860px] pb-12 mt-20">
       <div className="container mx-auto">
         <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
           About me
@@ -250,8 +250,8 @@ const About = () => {
                 <TabsContent value="skills">
                   <div className="flex flex-col gap-y-5">
                     <h3 className="h3 mb-4 text-center xl:text-left">Tools </h3>
-                    <section className="flex flex-col items-center xl:items-start">
-                      <h4>Skills</h4>
+                    <section className="flex flex-col">
+                      <h4 className="text-center sm:text-left">Skills</h4>
                       <div className="border-b w-full border-border mb-4 mt-1"></div>
                       <div>
                         {getData(skillData, "skills")?.data?.map((item, index) => {
