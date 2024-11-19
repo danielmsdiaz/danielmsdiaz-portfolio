@@ -12,14 +12,14 @@ const Form = () => {
                     <User className="absolute right-6" size={20} />
                 </div>
                 <div className="relative flex items-center">
-                    <Input type="email" id="email" placeholder="email" />
+                    <Input type="email" id="email" placeholder="Email" />
                     <MailIcon className="absolute right-6" size={20} />
                 </div>
                 <div className="relative flex items-center">
-                    <Textarea id="name" placeholder="t" />
-                    <User className="absolute right-6" size={20} />
+                    <Textarea id="name" placeholder="Type your message here" />
+                    <MessagesSquare className="absolute right-6" size={20} />
                 </div>
-                <Button className="flex items-center rounded-full mx-auto w-1/2 xl:w-1/4 py-2">Let's talk</Button>
+                <Button className="flex items-center rounded-full mx-auto w-1/2 xl:w-1/4 py-2">Let's talk <ArrowRightIcon className="ml-1" size={20}/></Button>
             </div>
         </form>
     )

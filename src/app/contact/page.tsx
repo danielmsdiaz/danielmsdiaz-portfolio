@@ -15,7 +15,7 @@ const Contact = () => {
             <p className="subtitle max-w-[400px]">Feel free to drop a message below, and I'll get back to you soon!</p>
           </div>
           <div className="flex flex-col gap-y-14 xl:grid grid-cols-2">
-            <div className="flex flex-col gap-10 xl:gap-y-16 items-center xl:items-start">
+            <div className="flex flex-col gap-10 xl:gap-y-14">
               <div className="flex items-center gap-x-4">
                 <MailIcon size={18} className="text-primary dark:text-darkMode" />
                 <div>dmachadosdiaz@gmail.com</div>
