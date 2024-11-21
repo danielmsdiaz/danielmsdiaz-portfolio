@@ -9,22 +9,27 @@ import {
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 
+//translations
+import { useTranslation } from "react-i18next"
+
 type AlertProps = {
     onClose: () => void;
 };
 
 const Alert = ({ onClose }: AlertProps) => {
+    const [t, i18n] = useTranslation("global");
+
     return (
         <AlertDialog open onOpenChange={onClose}>
             <AlertDialogContent className="w-full max-w-sm sm:max-w-lg rounded-lg">
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Coming Soon!</AlertDialogTitle>
+                    <AlertDialogTitle>{t("alert.title")}</AlertDialogTitle>
                     <AlertDialogDescription>
-                        I'm working hard to make this section available soon. Stay tuned for updates!
+                    {t("alert.content")}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                    <AlertDialogCancel onClick={onClose}>Got it!</AlertDialogCancel>
+                    <AlertDialogCancel onClick={onClose}>{t("alert.button")}</AlertDialogCancel>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

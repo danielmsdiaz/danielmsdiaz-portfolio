@@ -6,6 +6,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Alert from "@/components/Alert";
 
+//translations
+import { useTranslation } from "react-i18next"
+
 type NavProps = {
   containerStyles: string;
   linkStyles: string;
@@ -13,15 +16,16 @@ type NavProps = {
   onClick?: () => void;
 };
 
-const links = [
-  { path: "/", name: "Home" },
-  { path: "/projects", name: "Projects" },
-  { path: "/contact", name: "Contact" },
-];
-
 const Nav = ({ containerStyles, linkStyles, underlineStyles, onClick }: NavProps) => {
   const path = usePathname();
   const [showAlert, setShowAlert] = useState(false);
+  const [t, i18n] = useTranslation("global");
+
+  const links = [
+    { path: "/", name: t("nav.home") },
+    { path: "/projects", name: t("nav.projects") },
+    { path: "/contact", name: t("nav.contact") },
+  ];
 
   const handleLinkClick = (linkPath: string, event: React.MouseEvent) => {
     if (linkPath === "/projects") {

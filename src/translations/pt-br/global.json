@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "message": "Olá, meu nome é Daniel Diaz",
+        "subtitle": "Teste 2",
+        "contact": "Contate-me",
+        "download": "Baixar CV",
+        "animation": {
+            "degree": "Estudante de engenharia da computação",
+            "curiosity": "Amante de tecnologia"
+        }
+    },
+    "nav": {
+        "home": "Início",
+        "projects": "Projetos",
+        "contact": "Contato"
+    },
+    "alert": {
+        "title": "Em breve!",
+        "content": "Estou trabalhando duro para disponibilizar esta seção em breve. Fique atento às atualizações!",
+        "button": "Entendi!"
+    },
+    "aboutMe": {
+        "title": "Sobre mim",
+        "sections": {
+            "personalInfo": "Informações pessoais",
+            "qualification": "Qualificações",
+            "skills": "Habilidades"
+        },
+        "description": "Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste",
+        "personalDetails": {
+            "profession": "Estudante de Engenharia da Computação",
+            "birthDate": "Nascido em 20 de jan, 1999",
+            "languagesTitle": "Linguagens",
+            "languages": "Português, Inglês e Espanhol"
+        },
+        "qualification": {
+            "myJourney": "Minha Jornada",
+            "experience": "Experiência",
+            "education": "Educação",
+            "intern": "Estagiário Full-Stack",
+            "degree": "Bacharelado em Engenharia da Computação"
+        },
+        "skills": {
+            "databases": "Banco de dados",
+            "testing": "Testes",
+            "miscellaneous": "Variados",
+            "tools": "Ferramentas"
+        }
+    },
+    "cto":{
+        "message": "Quer falar comigo? Contate-me",
+        "button": "Contate-me"
+    },
+    "contactPage": {
+        "hello": "Diga Olá 🤚",
+        "title": "Vamos trabalhar juntos!",
+        "subtitle": "Fique à vontade para deixar uma mensagem abaixo, e eu responderei em breve!",
+        "name": "Nome",
+        "message": "Digite sua mensagem aqui",
+        "button": "Vamos conversar"
+    }
+}

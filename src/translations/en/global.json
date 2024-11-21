@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "message": "Hello, my name is Daniel Diaz",
+        "subtitle": "Teste",
+        "contact": "Contact me",
+        "download": "Download CV",
+        "animation": {
+            "degree": "Computer Engineering Student",
+            "curiosity": "Technology Enthusiast"
+        }
+    },
+    "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "alert": {
+        "title": "Comming soon!",
+        "content": "I'm working hard to make this section available soon. Stay tuned for updates!",
+        "button": "Got it!"
+    },
+    "aboutMe": {
+        "title": "About me",
+        "sections": {
+            "personalInfo": "Personal info",
+            "qualification": "Qualification",
+            "skills": "Skills"
+        },
+        "description": "Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste",
+        "personalDetails": {
+            "profession": "Computer Engineering Student",
+            "birthDate": "Born in 20 Jan, 1999",
+            "languagesTitle": "Languages",
+            "languages": "Portuguese, English and Spanish"
+        },
+        "qualification": {
+            "myJourney": "My Journey",
+            "experience": "Experience",
+            "education": "Education",
+            "intern": "Full Stack Intern",
+            "degree": "Bachelor's degree in Computer Engineering"
+        },
+        "skills": {
+            "databases": "Databases",
+            "testing": "Testing",
+            "miscellaneous": "Miscellaneous",
+            "tools": "Tools"
+        }
+    },
+    "cto":{
+        "message": "Want to talk to me? Contact me!",
+        "button": "Contact me"
+    },
+    "contactPage": {
+        "hello": "Say Hello 🤚",
+        "title": "Let's work together!",
+        "subtitle": "Feel free to drop a message below, and I'll get back to you soon!",
+        "name": "Name",
+        "message": "Type your message here",
+        "button": "Let's talk"
+    }
+}

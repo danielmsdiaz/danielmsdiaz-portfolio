@@ -1,6 +1,7 @@
 "use client"
 
 import ThemeToggler from "./ThemeToggler"
+import LangToggler from "./LangToggler"
 import Logo from "./Logo"
 import Nav from "./Nav"
 import MobileNav from "./mobile/MobileNav"
@@ -27,7 +28,10 @@ const Header = () => {
               containerStyles="hidden xl:flex gap-x-8 items-center"
               linkStyles="relative hover:text-primary dark:hover:text-darkMode transition-all"
               underlineStyles="absolute left-0 top-full h-[2px] bg-primary w-full" />
-            <ThemeToggler />
+            <div className="flex gap-x-3 h-full">
+              <LangToggler />
+              <ThemeToggler />
+            </div>
             <div className="xl:hidden">
               <MobileNav />
             </div>
