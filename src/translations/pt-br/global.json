@@ -47,7 +47,7 @@
             "tools": "Ferramentas"
         }
     },
-    "cto":{
+    "cto": {
         "message": "Quer falar comigo? Contate-me",
         "button": "Contate-me"
     },
@@ -58,5 +58,60 @@
         "name": "Nome",
         "message": "Digite sua mensagem aqui",
         "button": "Vamos conversar"
+    },
+    "projects": {
+        "title": "Ultimos Projetos",
+        "subtitle": "Aqui você pode encontrar alguns dos projetos mais recentes que destacam minhas habilidades e experiência.",
+        "button": "Todos os Projetos",
+        "sushi": {
+            "description": "Projeto de site de sushi desenvolvido com Next.js, oferecendo cardápio interativo, informações sobre o restaurante e sistema de pedidos online.",
+            "status": "EM_PROGRESSO"
+        },
+        "imc": {
+            "name": "Calculadora de IMC",
+            "description": "Calculadora de IMC construída com React, permitindo que os usuários insiram seu peso e altura para calcular e exibir seu Índice de Massa Corporal.",
+            "status": "EM_PROGRESSO"
+        },
+        "nunes": {
+            "description": "Sistema de cadastro de produtos que permite os usuários a adicionar, editar e visualizar os detalhes dos produtos em uma interface minimalista.",
+            "status": "COMPLETO"
+        },
+        "workout": {
+            "name": "Sistema de Gestão de Personal Trainers",
+            "description": "Plataforma onde alunos podem contratar personais, receber planos de treino personalizados e acessar dashboards personalizados.",
+            "status": "INCOMPLETO"
+        }
+    },
+    "reviews": {
+        "title": "Avaliações",
+        "new": {
+            "title": "Sua Avaliação",
+            "subtitle": "Compartilhe seus pensamentos sobre mim",
+            "plus": "Fazer Avaliação",
+            "footer": "Obrigado!"
+        }
+    },
+    "form": {
+        "title": "Faça sua avaliação",
+        "subtitle": "O que você tem a dizer sobre mim?",
+        "name": {
+            "label": "Nome",
+            "placeholder": "Seu nome"
+        },
+        "role": {
+            "label": "Cargo",
+            "placeholder": "Seu cargo"
+        },
+        "git": {
+            "placeholder": "Seu GitHub"
+        },
+        "lin": {
+            "placeholder": "Seu LinkedIn"
+        },
+        "review": {
+            "label": "Avaliação",
+            "placeholder": "O que você tem a dizer sobre mim?"
+        },
+        "button": "Enviar"
     }
 }

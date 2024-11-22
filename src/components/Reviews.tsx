@@ -7,6 +7,9 @@ import { Pagination } from "swiper/modules";
 import NewReview from "./NewReview";
 import { Button } from "./ui/button"
 
+//translator
+import { useTranslation } from "react-i18next";
+
 export interface Review {
     name: string,
     role: string,
@@ -48,12 +51,14 @@ const reviewArray: Review[] = [
 ]
 
 const Reviews = () => {
+    const [t, i18n] = useTranslation("global");
+
     return (
         <section>
             <div className="container mx-auto">
                 <div className="flex flex-col items-center mb-10">
                     <h2 className="section-title mb-6 text-center mx-auto">
-                        Reviews
+                        {t("reviews.title")}
                     </h2>
                     <Button className="lg:hidden" onClick={() => {alert("asd")}}>Create Review</Button>
                 </div>

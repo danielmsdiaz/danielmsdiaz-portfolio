@@ -58,5 +58,60 @@
         "name": "Name",
         "message": "Type your message here",
         "button": "Let's talk"
+    },
+    "projects": {
+        "title": "Latest Projects",
+        "subtitle": "Here you can find some of the latest projects showcasing my skills and expertise.",
+        "button": "All Projects",
+        "sushi": {
+            "description": "Sushi website project developed with Next.js, featuring an interactive menu, restaurant information, and an online ordering system.",
+            "status": "IN_PROGRESS"
+        },
+        "imc": {
+            "name": "IMC Calculator",
+            "description": "BMI calculator project built with React, allowing users to input their weight and height to calculate and display their Body Mass Index.",
+            "status": "IN_PROGRESS"
+        },
+        "nunes": {
+            "description": "Simple product registration system built with React, allowing users to add, edit, and view product details in an easy-to-use interface.",
+            "status": "COMPLETED"
+        },
+        "workout": {
+            "name": "Personal Trainer Management System",
+            "description": "A platform where students can hire personal trainers, receive customized workout plans, and access dashboards for both trainers and students.",
+            "status": "NOT_COMPLETED"
+        }
+    },
+    "reviews":{
+        "title": "Reviews",
+        "new": {
+            "title": "Your Review",
+            "subtitle": "Share your thoughts about me",
+            "plus": "Start Review",
+            "footer": "Thank You!"
+        }
+    },
+    "form": {
+        "title": "Create your review",
+        "subtitle":"What you want to say about me?",
+        "name": {
+            "label": "Name",
+            "placeholder": "Your name"
+        },
+        "role": {
+            "label": "Role",
+            "placeholder": "Your role"
+        },
+        "git": {
+            "placeholder": "Your GitHub"
+        },
+        "lin": {
+            "placeholder": "Your LinkedIn"
+        },
+        "review": {
+            "label": "Review",
+            "placeholder": "What do you think about me?"
+        },
+        "button": "Send"
     }
 }

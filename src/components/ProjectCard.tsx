@@ -10,6 +10,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ProjectCard = ({ index, item }: { index: number, item: Project }) => {
+  console.log(item.status);
   return (
     <Card>
       <CardHeader className="bg-primary/30 dark:bg-darkMode/30">
@@ -21,7 +22,7 @@ const ProjectCard = ({ index, item }: { index: number, item: Project }) => {
           </div>
         </PhotoProvider>
       </CardHeader>
-      <div className="h-full px-8 py-6 text-center">
+      <div className="max-h-fit px-8 py-6 text-center">
         <div className="flex gap-x-1 uppercase text-sm font-medium mb-2 absolute top-4 left-5">
           {item.stack.map((item, index) => {
             return (
@@ -33,11 +34,11 @@ const ProjectCard = ({ index, item }: { index: number, item: Project }) => {
         <p className="text-muted-foreground text-lg">{item.description}</p>
         <div className="flex justify-center sm:justify-start mt-2">
           <Badge
-            className={`${item.status === "COMPLETED"
-              ? "bg-green-500 hover:bg-green-500"
-              : item.status === "NOT_COMPLETED"
-                ? "bg-red-500 hover:bg-red-500"
-                : "bg-yellow-500 hover:bg-yellow-500"
+            className={`${(item.status === "COMPLETED" || item.status === "COMPLETO")
+                ? "bg-green-500 hover:bg-green-500"
+                : (item.status === "NOT_COMPLETED" || item.status === "INCOMPLETO")
+                  ? "bg-red-500 hover:bg-red-500"
+                  : "bg-yellow-500 hover:bg-yellow-500"
               } cursor-default`}
           >
             {item.status.replace("_", " ")}

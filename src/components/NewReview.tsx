@@ -15,8 +15,12 @@ import { Review } from "./Reviews";
 import Image from "next/image";
 import Socials from "./Socials"
 
+//translator
+import { useTranslation } from "react-i18next";
+
 const NewReview = ({ item }: { item?: Review }) => {
     const [showModal, setShowModal] = useState<boolean>(false);
+    const [t, i18n] = useTranslation("global");
 
     const handleNewReview = () => {
         setShowModal(true);
@@ -47,8 +51,8 @@ const NewReview = ({ item }: { item?: Review }) => {
             ) : (
                 <Card className="p-4 text-center h-[330px] flex flex-col items-center">
                     <CardHeader>
-                        <CardTitle>Your Review</CardTitle>
-                        <CardDescription>Share your thoughts about me</CardDescription>
+                        <CardTitle>{t("reviews.new.title")}</CardTitle>
+                        <CardDescription>{t("reviews.new.subtitle")}</CardDescription>
                     </CardHeader>
 
                     <CardContent
@@ -56,11 +60,11 @@ const NewReview = ({ item }: { item?: Review }) => {
                         className="mt-2 flex flex-col items-center flex-grow justify-around cursor-pointer hover:scale-105 transition-all"
                     >
                         <PlusCircledIcon className="w-12 h-12 text-primary dark:text-darkMode mb-2" />
-                        <span className="text-primary dark:text-darkMode font-medium">Start Review</span>
+                        <span className="text-primary dark:text-darkMode font-medium">{t("reviews.new.plus")}</span>
                     </CardContent>
 
                     <CardFooter>
-                        <p className="text-gray-500 text-sm">Thank You!</p>
+                        <p className="text-gray-500 text-sm">{t("reviews.new.footer")}</p>
                     </CardFooter>
                 </Card>
             )}
