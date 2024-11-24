@@ -9,49 +9,39 @@ import { Button } from "./ui/button"
 
 //translator
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 export interface Review {
+    id: number,
     name: string,
     role: string,
-    message: string,
-    git: string,
+    review: string,
+    github: string,
     linkedin: string,
+    createdAt: any
 }
-
-const reviewArray: Review[] = [
-    {
-        name: "Daniel",
-        role: "Estudante",
-        message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        git: "https://github.com/felipealvesdev",
-        linkedin: "https://www.linkedin.com/in/danielmsdiaz/"
-    },
-    {
-        name: "Raissa",
-        role: "Adm",
-        message: "Meu queridinho",
-        git: "https://github.com/felipealvesdev",
-        linkedin: "https://www.linkedin.com/in/danielmsdiaz/"
-        
-    },
-    {
-        name: "Hector",
-        role: "Pai",
-        message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        git: "https://github.com/felipealvesdev",
-        linkedin: "https://www.linkedin.com/in/danielmsdiaz/"
-    },
-    {
-        name: "Simone",
-        role: "Mãe",
-        message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        git: "https://github.com/felipealvesdev",
-        linkedin: "https://www.linkedin.com/in/danielmsdiaz/"
-    }
-]
 
 const Reviews = () => {
     const [t, i18n] = useTranslation("global");
+    const [reviews, setReviews] = useState<Review[]>([]);
+
+    const fetchReviews = async () => {
+        const response = await fetch("/api/reviews", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        });
+        const data = await response.json();
+        return data
+    };
+
+
+    useEffect(() => {
+        fetchReviews().then((res) => {
+            setReviews(res);
+        });
+    }, [])
 
     return (
         <section>
@@ -60,30 +50,32 @@ const Reviews = () => {
                     <h2 className="section-title mb-6 text-center mx-auto">
                         {t("reviews.title")}
                     </h2>
-                    <Button className="lg:hidden" onClick={() => {alert("asd")}}>Create Review</Button>
+                    <Button className="lg:hidden" onClick={() => { alert("asd") }}>Create Review</Button>
                 </div>
-                <div className="flex items-start gap-4">
-                    <div className="hidden lg:flex w-[330px] justify-center h-[480px]">
-                        <NewReview />
+                <div className="flex items-start gap-4 justify-center">
+                    <div className="hidden lg:flex justify-center w-1/3">
+                        <NewReview setReviews={setReviews} />
                     </div>
-                    <Swiper
-                        className="w-full rounded-xl h-[380px]"
-                        slidesPerView={1}
-                        spaceBetween={20}
-                        modules={[Pagination]}
-                        pagination={{ clickable: true }}
-                        breakpoints={{
-                            1000: {
-                                slidesPerView: 3
-                            }
-                        }}
-                    >
-                        {reviewArray.map((item, index) => (
-                            <SwiperSlide key={index} className="w-1/4">
-                                <NewReview item={item} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                    {reviews.length > 0 && (
+                        <Swiper
+                            className="w-full rounded-xl h-[380px]"
+                            slidesPerView={1}
+                            spaceBetween={20}
+                            modules={[Pagination]}
+                            pagination={{ clickable: true }}
+                            breakpoints={{
+                                1000: {
+                                    slidesPerView: 3
+                                }
+                            }}
+                        >
+                            {reviews?.map((item, index) => (
+                                <SwiperSlide key={index}>
+                                    <NewReview setReviews={setReviews} item={item} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    )}
                 </div>
             </div>
         </section>

@@ -113,5 +113,11 @@
             "placeholder": "O que você tem a dizer sobre mim?"
         },
         "button": "Enviar"
+    },
+    "toast": {
+        "title": "Sucesso!",
+        "titleError": "Erro!",
+        "description": "Sua avaliação foi enviada.",
+        "descriptionError": "Avaliação Inapropriada"
     }
 }

@@ -19,7 +19,7 @@ const Socials = ({ item }: { item?: Review }) => {
         <>
             {item ? (
                 <div className="flex gap-x-2">
-                    <Link target="_blank" href={item.git}>
+                    <Link target="_blank" href={item.github}>
                         <div className="text-foreground text-[30px] hover:text-primary dark:hover:text-darkMode transition-all">
                             <RiGithubFill />
 

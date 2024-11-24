@@ -10,7 +10,6 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ProjectCard = ({ index, item }: { index: number, item: Project }) => {
-  console.log(item.status);
   return (
     <Card>
       <CardHeader className="bg-primary/30 dark:bg-darkMode/30">
