@@ -1,39 +1,27 @@
-// import { NextResponse } from "next/server";
-// import nodemailer from "nodemailer";
+import { Resend } from 'resend';
+import { EmailTemplate } from '@/components/EmailTemplate';
 
-// // Função para enviar email (usando Nodemailer)
-// async function sendEmail({ name, email, message }: { name: string; email: string; message: string }) {
-//   const transporter = nodemailer.createTransport({
-//     service: "Gmail", // ou outro provedor
-//     auth: {
-//       user: "seu-email@gmail.com",
-//       pass: "sua-senha", // Use variáveis de ambiente
-//     },
-//   });
+const resend = new Resend(process.env.NEXT_PUBLIC_SENDER_API_KEY);
 
-//   await transporter.sendMail({
-//     from: email,
-//     to: "seu-email@gmail.com",
-//     subject: `Mensagem de ${name}`,
-//     text: message,
-//   });
-// }
+export async function POST(request: Request) {
+    try {
+        const body = await request.json();
+        const {name, email, message} = body;
+        
+        const { data, error } = await resend.emails.send({
+            from: `onboarding@resend.dev`,
+            to: ['dmachadosdiaz@gmail.com'],
+            subject: 'Olá, vim através do seu portifólio! :)',
+            react: EmailTemplate({ firstName: name, message, email }),
+        });
 
-// // POST: Envia uma mensagem
-// export async function POST(request: Request) {
-//   try {
-//     const body = await request.json();
-//     const { name, email, message } = body;
+        if (error) {
+            console.log(error);
+            return Response.json({ error }, { status: 500 });
+        }
 
-//     if (!name || !email || !message) {
-//       return NextResponse.json({ error: "All fields are required!" }, { status: 400 });
-//     }
-
-//     // Enviar email
-//     await sendEmail({ name, email, message });
-
-//     return NextResponse.json({ success: true, message: "Message sent successfully!" });
-//   } catch (error) {
-//     return NextResponse.json({ error: "Failed to send message" }, { status: 500 });
-//   }
-// }
+        return Response.json(data);
+    } catch (error) {
+        return Response.json({ error }, { status: 500 });
+    }
+}

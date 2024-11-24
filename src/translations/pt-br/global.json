@@ -119,5 +119,11 @@
         "titleError": "Erro!",
         "description": "Sua avaliação foi enviada.",
         "descriptionError": "Avaliação Inapropriada"
+    },
+    "email": {
+        "title": "Sucesso!",
+        "titleError": "Erro!",
+        "description": "Seu email foi enviado.",
+        "descriptionError": "Erro ao enviar o email."
     }
 }

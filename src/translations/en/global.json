@@ -119,5 +119,11 @@
         "titleError": "Error!",
         "description": "Your review has been submitted.",
         "descriptionError": "Inappropriate review"
+    },
+    "email": {
+        "title": "Sucess!",
+        "titleError": "Error!",
+        "description": "Your email has been sent.",
+        "descriptionError": "Error sending email."
     }
 }

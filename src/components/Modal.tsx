@@ -86,13 +86,13 @@ const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void,
 
     return (
         <Dialog open onOpenChange={handleCloseModal}>
-            <DialogContent className="sm:max-w-[625px]">
+            <DialogContent className="max-w-[450px] sm:max-w-[625px]">
                 <DialogHeader>
                     <DialogTitle>{t("form.title")}</DialogTitle>
                     <DialogDescription>{t("form.subtitle")}</DialogDescription>
                 </DialogHeader>
                 <div className="flex flex-col gap-y-4">
-                    <div className="grid grid-cols-2 justify-items-stretch gap-y-2">
+                    <div className="flex flex-col gap-y-3 md:grid md:grid-cols-2 md:justify-items-stretch md:gap-y-2">
                         <div className="flex items-center gap-x-4">
                             <Label htmlFor="name" className="text-left">
                                 {t("form.name.label")}
@@ -105,7 +105,7 @@ const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void,
                                 onChange={handleChange}
                             />
                         </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
+                        <div className="flex items-center gap-x-2 md:grid md:grid-cols-4 md:items-center md:gap-4">
                             <Label htmlFor="github" className="text-right">
                                 GitHub
                             </Label>
@@ -129,7 +129,7 @@ const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void,
                                 onChange={handleChange}
                             />
                         </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
+                        <div className="flex items-center gap-x-2 md:grid md:grid-cols-4 md:items-center md:gap-4">
                             <Label htmlFor="linkedin" className="text-right">
                                 LinkedIn
                             </Label>
