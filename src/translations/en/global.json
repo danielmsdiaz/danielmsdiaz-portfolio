@@ -95,11 +95,11 @@
         "title": "Create your review",
         "subtitle": "What you want to say about me?",
         "name": {
-            "label": "Name",
+            "label": "Name*",
             "placeholder": "Your name"
         },
         "role": {
-            "label": "Role",
+            "label": "Role*",
             "placeholder": "Your role"
         },
         "git": {
@@ -109,7 +109,7 @@
             "placeholder": "Your LinkedIn"
         },
         "review": {
-            "label": "Review",
+            "label": "Review*",
             "placeholder": "What do you think about me?"
         },
         "button": "Send"

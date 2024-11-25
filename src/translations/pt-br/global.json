@@ -95,11 +95,11 @@
         "title": "Faça sua avaliação",
         "subtitle": "O que você tem a dizer sobre mim?",
         "name": {
-            "label": "Nome",
+            "label": "Nome*",
             "placeholder": "Seu nome"
         },
         "role": {
-            "label": "Cargo",
+            "label": "Cargo*",
             "placeholder": "Seu cargo"
         },
         "git": {
@@ -109,7 +109,7 @@
             "placeholder": "Seu LinkedIn"
         },
         "review": {
-            "label": "Avaliação",
+            "label": "Avaliação*",
             "placeholder": "O que você tem a dizer sobre mim?"
         },
         "button": "Enviar"

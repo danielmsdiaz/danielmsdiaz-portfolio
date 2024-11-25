@@ -22,6 +22,7 @@ import { useTranslation } from "react-i18next";
 
 const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void, setReviews: React.Dispatch<React.SetStateAction<Review[]>> }) => {
     const { toast } = useToast();
+
     const [formData, setFormData] = useState({
         name: "",
         github: "",
@@ -29,8 +30,26 @@ const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void,
         linkedin: "",
         review: "",
     });
+
+    const [errors, setErrors] = useState({
+        name: false,
+        role: false,
+        review: false
+    });
+
+    const validateForm = () => {
+        const newErrors = {
+            name: !formData.name.trim(),
+            role: !formData.role.trim(),
+            review: !formData.review.trim(),
+        };
+
+        setErrors(newErrors);
+
+        return !Object.values(newErrors).includes(true);
+    };
+
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
 
     const [t, i18n] = useTranslation("global");
 
@@ -43,7 +62,10 @@ const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void,
 
     const handleSubmit = async () => {
         setLoading(true);
-        setError(null);
+
+        if (!validateForm()) {
+            return setLoading(false);
+        }
 
         try {
             const response = await fetch("/api/reviews", {
@@ -64,23 +86,23 @@ const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void,
                     })
                     return handleCloseModal();
                 }
+                return;
             }
-
-            const newReview = await response.json();
-            setReviews((prevReviews: any) => [...prevReviews, newReview]);
 
             toast({
                 title: t("toast.title"),
                 description: t("toast.description"),
             })
-            
+
+            const newReview = await response.json();
+            setReviews((prevReviews: any) => [...prevReviews, newReview]);
+
+        }
+        catch (err: any) {
+            console.log(err);
+        }
+        finally {
             return handleCloseModal();
-
-
-        } catch (err: any) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
         }
     };
 
@@ -100,7 +122,7 @@ const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void,
                             <Input
                                 id="name"
                                 placeholder={t("form.name.placeholder")}
-                                className="col-span-3"
+                                className={`col-span-3 ${errors.name ? "border-red-500" : ""}`}
                                 value={formData.name}
                                 onChange={handleChange}
                             />
@@ -124,7 +146,7 @@ const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void,
                             <Input
                                 id="role"
                                 placeholder={t("form.role.placeholder")}
-                                className="col-span-3"
+                                className={`col-span-3 ${errors.role ? "border-red-500" : ""}`}
                                 value={formData.role}
                                 onChange={handleChange}
                             />
@@ -149,7 +171,7 @@ const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void,
                         <Textarea
                             id="review"
                             placeholder={t("form.review.placeholder")}
-                            className="col-span-3 mt-2"
+                            className={`col-span-3 mt-2 ${errors.review ? "border-red-500" : ""}`}
                             value={formData.review}
                             onChange={handleChange}
                         />
