@@ -11,14 +11,14 @@ import {
 import { PlusCircledIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import Modal from "@/components/Modal";
-import { Review } from "./Reviews";
+import { Review } from "@/types/reviews";
 import Image from "next/image";
 import Socials from "./Socials"
 
 //translator
 import { useTranslation } from "react-i18next";
 
-const NewReview = ({ item, setReviews }: { item?: Review, setReviews: React.Dispatch<React.SetStateAction<Review[]>> }) => { 
+const NewReview = ({ item}: { item?: Review}) => { 
     const [showModal, setShowModal] = useState<boolean>(false);
     const [t, i18n] = useTranslation("global");
 
@@ -68,7 +68,7 @@ const NewReview = ({ item, setReviews }: { item?: Review, setReviews: React.Disp
                     </CardFooter>
                 </Card>
             )}
-            {showModal && <Modal setReviews={setReviews} handleCloseModal={handleCloseModal} />}
+            {showModal && <Modal handleCloseModal={handleCloseModal} />}
         </>
 
     );

@@ -41,3 +41,25 @@ export const addReview = (newReview: any): any => {
 
     return newReview;
 };
+
+export const deleteReview = (id: number): void => {
+    const reviews = readReviews();
+    const updatedReviews = reviews.filter((review) => review.id !== id);
+
+    if (updatedReviews.length !== reviews.length) {
+        saveReviews(updatedReviews);
+    }
+};
+
+
+export const editReview = (id: number): void => {
+    const reviews = readReviews();
+    
+    const updatedReviews = reviews.map((review) => 
+        review.id === id ? { ...review, status: true } : review
+    );
+
+    saveReviews(updatedReviews);
+
+};
+

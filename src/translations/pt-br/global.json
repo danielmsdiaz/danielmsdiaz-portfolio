@@ -1,7 +1,7 @@
 {
     "hero": {
         "message": "Olá, meu nome é Daniel Diaz",
-        "subtitle": "Teste 2",
+        "subtitle": "Sou um desenvolvedor full-stack com experiência em React.js, Node.js e gerenciamento de bancos de dados. Gosto de criar soluções web escaláveis e estou sempre aprimorando minhas habilidades por meio de projetos pessoais e trabalhos como freelancer.",
         "contact": "Contate-me",
         "download": "Baixar CV",
         "animation": {
@@ -26,7 +26,8 @@
             "qualification": "Qualificações",
             "skills": "Habilidades"
         },
-        "description": "Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste",
+        "h1": "Desenvolvedor Full-Stack apaixonado por tecnologia e inovação",
+        "description": "Transformando ideias em soluções web eficientes, com foco em performance e escalabilidade",
         "personalDetails": {
             "profession": "Estudante de Engenharia da Computação",
             "birthDate": "Nascido em 20 de jan, 1999",
@@ -117,7 +118,7 @@
     "toast": {
         "title": "Sucesso!",
         "titleError": "Erro!",
-        "description": "Sua avaliação foi enviada.",
+        "description": "Sua avaliação foi enviada para análise.",
         "descriptionError": "Avaliação Inapropriada"
     },
     "email": {

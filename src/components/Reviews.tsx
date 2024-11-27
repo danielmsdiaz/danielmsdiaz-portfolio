@@ -13,22 +13,19 @@ import Modal from "@/components/Modal";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 
-export interface Review {
-    id: number;
-    name: string;
-    role: string;
-    review: string;
-    github: string;
-    linkedin: string;
-    createdAt: any;
-}
+import { Review } from "@/types/reviews";
+
+//global state
+import { reviewStore } from "@/store/review";
+import { useStore } from "zustand";
 
 const Reviews = () => {
     const [t, i18n] = useTranslation("global");
-    const [reviews, setReviews] = useState<Review[]>([]);
     const [showModal, setShowModal] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(true); 
 
+    const reviews = useStore(reviewStore, (state) => state.reviews);
+    
     const handleNewReview = () => {
         setShowModal(true);
     };
@@ -39,6 +36,7 @@ const Reviews = () => {
 
     const fetchReviews = async () => {
         setIsLoading(true);
+
         try {
             const response = await fetch("/api/reviews", {
                 method: "GET",
@@ -47,7 +45,10 @@ const Reviews = () => {
                 },
             });
             const data = await response.json();
-            setReviews(data);
+            const filteredData = data.filter((item: Review) => item.status === true);
+
+            reviewStore.getState().addListReviews(filteredData);
+                 
         } catch (error) {
             console.error("Error fetching reviews:", error);
         } finally {
@@ -60,7 +61,7 @@ const Reviews = () => {
     }, []);
 
     return (
-        <section>
+        <section className="mt-16 xl:mt-60">
             <div className="container mx-auto">
                 <div className="flex flex-col items-center mb-10">
                     <h2 className="section-title mb-6 text-center mx-auto">
@@ -72,7 +73,7 @@ const Reviews = () => {
                 </div>
                 <div className="flex items-start gap-4 justify-center">
                     <div className="hidden lg:flex justify-center w-1/3">
-                        <NewReview setReviews={setReviews} />
+                        <NewReview />
                     </div>
                     {isLoading ? (
                         <RevSkeleton />
@@ -91,14 +92,14 @@ const Reviews = () => {
                         >
                             {reviews.map((item, index) => (
                                 <SwiperSlide key={index}>
-                                    <NewReview setReviews={setReviews} item={item} />
+                                    <NewReview item={item} />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
                     )}
                 </div>
                 {showModal && (
-                    <Modal setReviews={setReviews} handleCloseModal={handleCloseModal} />
+                    <Modal handleCloseModal={handleCloseModal} />
                 )}
             </div>
         </section>

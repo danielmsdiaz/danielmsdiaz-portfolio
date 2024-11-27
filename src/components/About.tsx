@@ -164,7 +164,7 @@ const About = () => {
               <div className="text-lg mt-24 xl:mt-8 p-2 xl:p-0">
                 <TabsContent value="personal">
                   <div className="text-center xl:text-left">
-                    <h3 className="h3 mb-4">{t("aboutMe.description")}</h3>
+                    <h3 className="h3 mb-4">{t("aboutMe.h1")}</h3>
                     <p className="subtitle max-w-xl mx-auto xl:mx-0">{t("aboutMe.description")}</p>
                     <div className="grid xl:grid-cols-2 gap-4 mb-12">
                       {infoData.map((item, index) => {

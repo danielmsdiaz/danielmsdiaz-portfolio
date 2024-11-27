@@ -29,28 +29,28 @@ const Projects = () => {
         {
             name: "Raíssa Sushi",
             description: t("projects.sushi.description"),
-            imgPath: "/projects/sushi_light.png",
+            imgPath: "/project/sushi_light.png",
             stack: ["NextJs", "Tailwindcss", "Shadcn"],
             status: t("projects.sushi.status"),
         },
         {
             name: t("projects.imc.name"),
             description: t("projects.imc.description"),
-            imgPath: "/projects/imc.png",
+            imgPath: "/project/imc.png",
             stack: ["Reactjs"],
             status: t("projects.imc.status"),
         },
         {
             name: t("projects.workout.name"),
             description: t("projects.workout.description"),
-            imgPath: "/projects/train.png",
+            imgPath: "/project/train.png",
             stack: ["Nextjs", "Tailwindcss", "NodeJs", "Express", "postgres"],
             status: t("projects.workout.status"),
         },
         {
             name: "Nunes Sports",
             description: t("projects.nunes.description"),
-            imgPath: "/projects/sports.png",
+            imgPath: "/project/sports.png",
             stack: ["ReactJs", "Tailwindcss", "PrimeReact UI"],
             status: t("projects.nunes.status"),
         }
@@ -70,8 +70,8 @@ const Projects = () => {
                     </Link>
                 </div>
                 <div className="xl:max-w-[1000px] xl:absolute right-0 top-0 xl:mr-10">
-                    <Swiper className="min-h-[500px] rounded-xl" slidesPerView={1} breakpoints={{
-                        960: {
+                    <Swiper className="min-h-[570px] sm:min-h-[550px] rounded-xl" slidesPerView={1} breakpoints={{
+                        1050: {
                             slidesPerView: 2
                         }
                     }} spaceBetween={30} modules={[Pagination]} pagination={{ clickable: true }}>

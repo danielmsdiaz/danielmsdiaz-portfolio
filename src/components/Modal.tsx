@@ -15,12 +15,12 @@ import { useToast } from "@/hooks/use-toast"
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Review } from "./Reviews";
+import { Review } from "@/types/reviews";
 
 //translator
 import { useTranslation } from "react-i18next";
 
-const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void, setReviews: React.Dispatch<React.SetStateAction<Review[]>> }) => {
+const Modal = ({ handleCloseModal}: { handleCloseModal: () => void}) => {
     const { toast } = useToast();
 
     const [formData, setFormData] = useState({
@@ -94,8 +94,8 @@ const Modal = ({ handleCloseModal, setReviews }: { handleCloseModal: () => void,
                 description: t("toast.description"),
             })
 
-            const newReview = await response.json();
-            setReviews((prevReviews: any) => [...prevReviews, newReview]);
+            //const newReview = await response.json();
+            //setReviews((prevReviews: any) => [...prevReviews, newReview]);
 
         }
         catch (err: any) {
