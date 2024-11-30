@@ -38,7 +38,7 @@ const ProjectCard = ({ index, item }: { index: number, item: Project }) => {
         </div> */}
         <h4 className="h4">{item.name}</h4>
         <p className="text-muted-foreground text-lg">{item.description}</p>
-        <div className="flex justify-center sm:justify-start mt-2">
+        <div className="flex justify-center sm:justify-start mb-3">
           <Badge
             className={`${(item.status === "COMPLETED" || item.status === "COMPLETO")
               ? "bg-green-500 hover:bg-green-500"

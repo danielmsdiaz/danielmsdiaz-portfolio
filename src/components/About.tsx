@@ -19,7 +19,7 @@ const About = () => {
   }
 
   return (
-    <section className="xl:h-[860px] pb-12 mt-20">
+    <section className="xl:h-[860px] pb-12 mt-40 xl:mt-20">
       <div className="container mx-auto">
         <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
           {t("aboutMe.title")}
