@@ -20,7 +20,7 @@ const Contact = () => {
               <div>{t("contactPage.hello")}</div>
             </div>
             <div className="flex justify-between w-full">
-              <div>
+              <div className="flex flex-col xl:w-1/2 w-full items-center xl:items-start">
                 <h1 className="h1 max-w-xl my-7">{t("contactPage.title")}</h1>
                 <p className="subtitle max-w-[400px]">{t("contactPage.subtitle")}</p>
               </div>

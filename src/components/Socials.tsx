@@ -1,7 +1,7 @@
 import Link from "next/link"
 import path from "path"
 import { RiGithubFill, RiLinkedinFill } from "react-icons/ri"
-import { Review } from "./Reviews";
+import { Review } from "@/types/reviews"
 
 const icons = [
     {
@@ -19,13 +19,13 @@ const Socials = ({ item }: { item?: Review }) => {
         <>
             {item ? (
                 <div className="flex gap-x-2">
-                    <Link target="_blank" href={item.github}>
+                    <Link target="_blank" href={item.github ? item.github : "https://github.com/danielmsdiaz"}>
                         <div className="text-foreground text-[30px] hover:text-primary dark:hover:text-darkMode transition-all">
                             <RiGithubFill />
 
                         </div>
                     </Link>
-                    <Link target="_blank" href={item.linkedin}>
+                    <Link target="_blank" href={item.linkedin ? item.linkedin : "https://www.linkedin.com/in/danielmsdiaz/"}>
                         <div className="text-foreground text-[30px] hover:text-primary dark:hover:text-darkMode transition-all">
                             <RiLinkedinFill />
                         </div>

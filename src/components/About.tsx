@@ -4,138 +4,12 @@ import { useTranslation } from 'react-i18next';
 import Hellow from "./Hellow"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs"
-import { User2, MailIcon, HomeIcon, PhoneCall, GraduationCap, Calendar, Briefcase } from "lucide-react"
+import { Briefcase, GraduationCap } from 'lucide-react';
 
-const infoData = [
-  {
-    icon: <User2 size={20} />,
-    text: "Daniel Diaz"
-  },
-  {
-    icon: <MailIcon size={20} />,
-    text: "dmachadosdiaz@gmail.com"
-  },
-  {
-    icon: <GraduationCap size={20} />,
-    text: "Computer Engineering Student"
-  },
-  {
-    icon: <PhoneCall size={20} />,
-    text: "+55 (81) 98686-1345"
-  },
-  {
-    icon: <Calendar size={20} />,
-    text: "Born in 20 jan, 1999"
-  },
-  {
-    icon: <HomeIcon size={20} />,
-    text: "Recife - PE"
-  }
-];
-
-interface Qualification {
-  title: string;
-  data: {
-    company?: string;
-    university?: string;
-    qualification?: string;
-    years?: string;
-  }[];
-}
-
-interface Skill {
-  title: string;
-  data: {
-    category?: string;
-    skills?: string[];
-    imgPath?: string;
-  }[];
-}
-
-const qualificationData: Qualification[] = [
-  {
-    title: "Education",
-    data: [
-      {
-        university: "UPE",
-        qualification: "Bachelor's degree in Computer Engineering",
-        years: "2018 - present"
-      }
-    ]
-  },
-  {
-    title: "Experience",
-    data: [
-      {
-        company: "Leve Tecnologia",
-        qualification: "Full Stack Intern",
-        years: "2020 - 2021"
-      },
-      {
-        company: "Nexus Branch",
-        qualification: "Freelancer",
-        years: "2024 - Present"
-      }
-    ]
-  }
-];
-
-const skillData: Skill[] = [
-  {
-    title: "skills",
-    data: [
-      {
-        category: "Front-end",
-        skills: ["React.js", "Next.js", "Tailwind CSS"]
-      },
-      {
-        category: "Back-end",
-        skills: ["Node.js (Express.js)", "PHP (CodeIgniter)", "Java (Spring Boot)"]
-      },
-      {
-        category: "Databases",
-        skills: ["MySQL", "PostgreSQL", "MongoDB"]
-      },
-      {
-        category: "Testing",
-        skills: ["Jest"]
-      },
-      {
-        category: "Miscellaneous",
-        skills: ["TypeScript", "Scrum"]
-      }
-    ]
-  },
-  {
-    title: "tools",
-    data: [
-      {
-        imgPath: '/about/vscode3.svg',
-      },
-      {
-        imgPath: '/about/js3.svg',
-      },
-      {
-        imgPath: '/about/node3.svg',
-      },
-      {
-        imgPath: '/about/php3.svg',
-      },
-      {
-        imgPath: '/about/java3.svg',
-      },
-      {
-        imgPath: '/about/react3.svg',
-      },
-      {
-        imgPath: '/about/tailwind3.svg',
-      },
-      {
-        imgPath: '/about/postgres.svg',
-      },
-    ]
-  }
-]
+//data
+import { Skill, skillData } from '@/types/about/skill';
+import { Qualification, qualificationData } from '@/types/about/qualification';
+import { infoData } from '@/types/about/info';
 
 const About = () => {
   const { t, i18n } = useTranslation("global");
@@ -204,19 +78,21 @@ const About = () => {
                         </div>
                         <div className="mt-4 flex flex-col gap-y-8">
                           {getData(qualificationData, "Experience")?.data?.map((item, index) => {
-                            const { company, qualification, years } = item;
-                            return (
-                              <div className="flex gap-x-2" key={index}>
-                                <div className="h-[1px] bg-border relative ml-2 pt-1">
-                                  <div className="h-[10px] w-[10px] rounded-full bg-primary dark:bg-darkMode"></div>
+                            if ("company" in item) {
+                              return (
+                                <div className="flex gap-x-2" key={index}>
+                                  <div className="h-[1px] bg-border relative ml-2 pt-1">
+                                    <div className="h-[10px] w-[10px] rounded-full bg-primary dark:bg-darkMode"></div>
+                                  </div>
+                                  <div>
+                                    <div className="font-semibold text-lg leading-none mb-2">{item.company}</div>
+                                    <div className="text-sm">{item.qualification?.includes("Intern") ? t("aboutMe.qualification.intern") : item.qualification}</div>
+                                    <div className="text-sm">{item.years}</div>
+                                  </div>
                                 </div>
-                                <div>
-                                  <div className="font-semibold text-lg leading-none mb-2">{company}</div>
-                                  <div className="text-sm">{qualification.includes("Intern") ? t("aboutMe.qualification.intern") : qualification}</div>
-                                  <div className="text-sm">{years}</div>
-                                </div>
-                              </div>
-                            );
+                              );
+                            }
+                            return null;
                           })}
                         </div>
                       </div>
@@ -231,19 +107,21 @@ const About = () => {
                         </div>
                         <div className="mt-4 flex flex-col gap-y-8">
                           {getData(qualificationData, "Education")?.data?.map((item, index) => {
-                            const { university, qualification, years } = item;
-                            return (
-                              <div className="flex gap-x-2" key={index}>
-                                <div className="h-[1px] bg-border relative ml-2 pt-1">
-                                  <div className="h-[10px] w-[10px] rounded-full bg-primary dark:bg-darkMode"></div>
+                            if ("qualification" in item) {
+                              const { university, qualification, years } = item;
+                              return (
+                                <div className="flex gap-x-2" key={index}>
+                                  <div className="h-[1px] bg-border relative ml-2 pt-1">
+                                    <div className="h-[10px] w-[10px] rounded-full bg-primary dark:bg-darkMode"></div>
+                                  </div>
+                                  <div>
+                                    <div className="font-semibold text-lg leading-none mb-2">{university}</div>
+                                    <div className="text-sm">{qualification?.includes("degree") ? t("aboutMe.qualification.degree") : qualification}</div>
+                                    <div className="text-sm">{years}</div>
+                                  </div>
                                 </div>
-                                <div>
-                                  <div className="font-semibold text-lg leading-none mb-2">{university}</div>
-                                  <div className="text-sm">{qualification.includes("degree") ? t("aboutMe.qualification.degree") : qualification}</div>
-                                  <div className="text-sm">{years}</div>
-                                </div>
-                              </div>
-                            );
+                              );
+                            }
                           })}
                         </div>
                       </div>
@@ -258,47 +136,49 @@ const About = () => {
                       <div className="border-b w-full border-border dark:border-darkMode mb-4 mt-1"></div>
                       <div>
                         {getData(skillData, "skills")?.data?.map((item, index) => {
-                          const { category, skills } = item;
-                          let finalCat = category
+                          if ("category" in item) {
+                            const { category, skills } = item;
+                            let finalCat = category
 
-                          switch (finalCat) {
-                            case 'Databases':
-                              finalCat = t("aboutMe.skills.databases")
-                              break;
-                            case 'Testing':
-                              finalCat = t("aboutMe.skills.testing")
-                              break;
-                            case 'Miscellaneous':
-                              finalCat = t("aboutMe.skills.miscellaneous")
-                              break;
-                          }
+                            switch (finalCat) {
+                              case 'Databases':
+                                finalCat = t("aboutMe.skills.databases")
+                                break;
+                              case 'Testing':
+                                finalCat = t("aboutMe.skills.testing")
+                                break;
+                              case 'Miscellaneous':
+                                finalCat = t("aboutMe.skills.miscellaneous")
+                                break;
+                            }
 
-                          return (
-                            <div className="flex gap-x-2" key={index}>
-                              <div className="h-[1px] bg-border relative ml-2 pt-1">
-                                <div className="h-[8px] w-[8px] rounded-full bg-primary dark:bg-darkMode"></div>
-                              </div>
-                              <div>
-                                <div className="font-semibold text-lg leading-none mb-1 text-primary dark:text-darkMode">{finalCat}</div>
-                                <div className="text-sm mb-5">
-                                  <div className="flex flex-col sm:flex-row sm:gap-x-3">
-                                    {skills.map((item, index) => {
-                                      return (
-                                        <div className="flex gap-x-1">
-                                          <div className="h-[1px] bg-border relative ml-2 pt-2">
-                                            <div className="h-[5px] w-[5px] rounded-full bg-primary dark:bg-darkMode"></div>
+                            return (
+                              <div className="flex gap-x-2" key={index}>
+                                <div className="h-[1px] bg-border relative ml-2 pt-1">
+                                  <div className="h-[8px] w-[8px] rounded-full bg-primary dark:bg-darkMode"></div>
+                                </div>
+                                <div>
+                                  <div className="font-semibold text-lg leading-none mb-1 text-primary dark:text-darkMode">{finalCat}</div>
+                                  <div className="text-sm mb-5">
+                                    <div className="flex flex-col sm:flex-row sm:gap-x-3">
+                                      {skills?.map((item, index) => {
+                                        return (
+                                          <div key={index} className="flex gap-x-1">
+                                            <div className="h-[1px] bg-border relative ml-2 pt-2">
+                                              <div className="h-[5px] w-[5px] rounded-full bg-primary dark:bg-darkMode"></div>
+                                            </div>
+                                            <div key={index}>
+                                              {item}
+                                            </div>
                                           </div>
-                                          <div key={index}>
-                                            {item}
-                                          </div>
-                                        </div>
-                                      )
-                                    })}
+                                        )
+                                      })}
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          );
+                            );
+                          }
                         })}
                       </div>
                     </section>
@@ -307,11 +187,13 @@ const About = () => {
                       <div className="border-b w-full border-border dark:border-darkMode mb-4 mt-1"></div>
                       <div className="flex justify-between">
                         {getData(skillData, "tools")?.data?.map((item, index) => {
-                          return (
-                            <div key={index}>
-                              <img className="hover:scale-110 transition-all cursor-pointer" src={item.imgPath} alt="icon" width={48} height={48} />
-                            </div>
-                          );
+                          if ("imgPath" in item) {
+                            return (
+                              <div key={index}>
+                                <img className="hover:scale-110 transition-all cursor-pointer" src={item.imgPath} alt="icon" width={48} height={48} />
+                              </div>
+                            );
+                          }
                         })}
                       </div>
                     </section>
