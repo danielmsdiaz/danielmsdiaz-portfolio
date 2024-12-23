@@ -28,7 +28,7 @@ const ProjectCard = ({ index, item }: { index: number, item: Project }) => {
           </div>
         </PhotoProvider>
       </CardHeader>
-      <div className="max-h-fit px-8 py-6 text-center flex flex-col gap-y-3 sm:gap-y-10">
+      <div className="px-8 py-6 text-center flex flex-col gap-y-2 sm:gap-y-10 ">
         {/* <div className="flex gap-x-1 uppercase text-sm font-medium mb-2 absolute top-4 left-5">
           {item.stack.map((item, index) => {
             return (
@@ -37,8 +37,8 @@ const ProjectCard = ({ index, item }: { index: number, item: Project }) => {
           })}
         </div> */}
         <h4 className="h4">{item.name}</h4>
-        <p className="text-muted-foreground text-lg">{item.description}</p>
-        <div className="flex justify-center sm:justify-start mb-3">
+        <p className="text-muted-foreground h-[120px] sm:h-min pr-3 text-lg overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-primary dark:scrollbar-thumb-darkMode scrollbar-track-slate-300">{item.description}</p>
+        <div className="flex justify-center sm:justify-start mb-3 mt-5 sm:mt-3">
           <Badge
             className={`${(item.status === "COMPLETED" || item.status === "COMPLETO")
               ? "bg-green-500 hover:bg-green-500"

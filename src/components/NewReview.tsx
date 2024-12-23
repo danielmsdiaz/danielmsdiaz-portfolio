@@ -41,7 +41,7 @@ const NewReview = ({ item}: { item?: Review}) => {
                             <CardDescription className="text-sm max-w-[200px] truncate overflow-hidden text-ellipsis whitespace-nowrap">{item.role}</CardDescription>
                         </div>
                     </CardHeader>
-                    <CardContent className="text-left h-[200px] overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-primary dark:scrollbar-thumb-darkMode scrollbar-track-slate-300 mr-2">
+                    <CardContent className="text-left h-[200px] overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-primary dark:scrollbar-thumb-darkMode scrollbar-track-slate-300 mr-2 break-all">
                         {item.review}
                     </CardContent>
                     <CardFooter className="mx-auto">

@@ -70,7 +70,7 @@
         },
         "imc": {
             "name": "Calculadora de IMC",
-            "description": "Calculadora de IMC construída com React, permitindo que os usuários insiram seu peso e altura para calcular e exibir seu Índice de Massa Corporal.",
+            "description": "Calculadora feita com React, permitindo que os usuários insiram seu peso e altura para exibir seu Índice de Massa Corporal.",
             "status": "EM_PROGRESSO"
         },
         "nunes": {

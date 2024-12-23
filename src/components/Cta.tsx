@@ -11,9 +11,9 @@ const Cta = () => {
 
   return (
     <section className="py-24">
-        <div className="container mx-auto">
+        <div className="container mx-auto bg-primary/35 dark:bg-darkMode/35 sm:bg-inherit dark:sm:bg-inherit py-6">
             <div className="flex flex-col items-center">
-                <h2 className="h2 max-w-xl text-center mb-8">{t("cto.message")}</h2>
+                <h2 className="h2 text-center mb-8 ">{t("cto.message")}</h2>
                 <Link href="/contact">
                     <Button>{t("cto.button")}</Button>
                 </Link>

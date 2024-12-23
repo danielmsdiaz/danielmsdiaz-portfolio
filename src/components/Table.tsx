@@ -57,7 +57,7 @@ const ReviewTable = ({ listReviews, setReviews }: { listReviews: Review[], setRe
                 {listReviews.map((item, index) => (
                     <TableRow key={index}>
                         <TableCell className="font-medium">{item.id}</TableCell>
-                        <TableCell className="w-full">{item.review}</TableCell>
+                        <TableCell className="w-full break-all">{item.review}</TableCell>
                         <TableCell>
                             <div className="flex flex-row gap-x-2">
                                 <CheckCircle2 onClick={() => { handleCheckBtn(item) }} className="text-green-500 cursor-pointer hover:text-green-300" />
