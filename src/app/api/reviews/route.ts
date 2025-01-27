@@ -1,13 +1,14 @@
 import { NextResponse } from "next/server";
-import { readReviews, addReview, reviewsLength, deleteReview, editReview } from '@/lib/reviewService';
 
 //api gemini
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
+import ReviewService from "./services/review";
+
 // GET: Retorna todos os reviews
 export async function GET() {
     try {
-        const reviews = readReviews();
+        const reviews = await ReviewService.list();
         return NextResponse.json(reviews);
     }
     catch (error) {
@@ -51,18 +52,13 @@ export async function POST(request: Request) {
         //     return NextResponse.json("Comentário inapropriado", { status: 500 });
         // }
 
-        const newReview = {
-            id: reviewsLength() + 1,
-            review,
+        const newReview = await ReviewService.create({
             name,
-            github,
             role,
+            review,
+            github,
             linkedin,
-            createdAt: new Date().toISOString(),
-            status: false
-        };
-
-        addReview(newReview);
+        });
 
         return NextResponse.json(newReview, { status: 201 });
     } catch (error) {
@@ -80,7 +76,10 @@ export async function PUT(request: Request) {
             return NextResponse.json({ error: "ID is required to edit the review!" }, { status: 400 });
         }
 
-        editReview(id);
+        const updatedReview = await ReviewService.edit(id, {
+            status: true,
+        });
+
         return NextResponse.json({ message: "Review updated successfully" }, { status: 200 });
 
     } catch (error) {
@@ -97,8 +96,9 @@ export async function DELETE(request: Request) {
         if (!id) {
             return NextResponse.json({ error: "ID is required to delete the review!" }, { status: 400 });
         }
-        
-        deleteReview(parseInt(id));
+
+        const deletedReview = await ReviewService.delete(id);
+
         return NextResponse.json({ message: "Review deleted successfully" }, { status: 200 });
 
     } catch (error) {
