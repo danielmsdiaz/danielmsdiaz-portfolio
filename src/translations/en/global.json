@@ -105,10 +105,10 @@
             "placeholder": "Your role"
         },
         "git": {
-            "placeholder": "Your GitHub"
+            "placeholder": "Your GitHub (link)"
         },
         "lin": {
-            "placeholder": "Your LinkedIn"
+            "placeholder": "Your LinkedIn (link)"
         },
         "review": {
             "label": "Review*",

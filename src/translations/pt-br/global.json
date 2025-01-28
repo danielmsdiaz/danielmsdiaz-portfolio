@@ -105,10 +105,10 @@
             "placeholder": "Seu cargo"
         },
         "git": {
-            "placeholder": "Seu GitHub"
+            "placeholder": "Seu GitHub (link)"
         },
         "lin": {
-            "placeholder": "Seu LinkedIn"
+            "placeholder": "Seu LinkedIn (link)" 
         },
         "review": {
             "label": "Avaliação*",
