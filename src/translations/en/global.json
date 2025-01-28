@@ -85,6 +85,7 @@
     },
     "reviews": {
         "title": "Reviews",
+        "reviewsBtn": "Create review",
         "new": {
             "title": "Your Review",
             "subtitle": "Share your thoughts about me",

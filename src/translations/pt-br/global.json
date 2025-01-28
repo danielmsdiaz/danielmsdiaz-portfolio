@@ -31,7 +31,7 @@
         "personalDetails": {
             "profession": "Estudante de Engenharia da Computação",
             "birthDate": "Nascido em 20 de jan, 1999",
-            "languagesTitle": "Linguagens",
+            "languagesTitle": "Idiomas",
             "languages": "Português, Inglês e Espanhol"
         },
         "qualification": {
@@ -85,6 +85,7 @@
     },
     "reviews": {
         "title": "Avaliações",
+        "reviewsBtn": "Criar avaliação",
         "new": {
             "title": "Sua Avaliação",
             "subtitle": "Compartilhe seus pensamentos sobre mim",

@@ -47,7 +47,7 @@ const About = () => {
                             {item.icon}
                           </div>
                           <div>
-                            {item.text.includes("Born") ? t("aboutMe.personalDetails.birthDate") : item.text}
+                            {item.text.includes("Born") ? t("aboutMe.personalDetails.birthDate") : item.text.includes("Computer") ? t("aboutMe.personalDetails.profession") : item.text}
                           </div>
                         </div>
                       })}

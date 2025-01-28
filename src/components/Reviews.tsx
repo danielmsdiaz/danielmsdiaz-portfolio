@@ -22,10 +22,10 @@ import { useStore } from "zustand";
 const Reviews = () => {
     const [t, i18n] = useTranslation("global");
     const [showModal, setShowModal] = useState<boolean>(false);
-    const [isLoading, setIsLoading] = useState<boolean>(true); 
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     const reviews = useStore(reviewStore, (state) => state.reviews);
-    
+
     const handleNewReview = () => {
         setShowModal(true);
     };
@@ -48,7 +48,7 @@ const Reviews = () => {
             const filteredData = data.filter((item: Review) => item.status === true);
 
             reviewStore.getState().addListReviews(filteredData);
-                 
+
         } catch (error) {
             console.error("Error fetching reviews:", error);
         } finally {
@@ -68,7 +68,7 @@ const Reviews = () => {
                         {t("reviews.title")}
                     </h2>
                     <Button className="lg:hidden" onClick={handleNewReview}>
-                        Create Review
+                        {t("reviews.reviewsBtn")}
                     </Button>
                 </div>
                 <div className="flex items-start gap-4 justify-center">
