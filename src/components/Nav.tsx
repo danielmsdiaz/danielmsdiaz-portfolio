@@ -13,10 +13,10 @@ type NavProps = {
   containerStyles: string;
   linkStyles: string;
   underlineStyles?: string;
-  onClick?: () => void;
+  close?: () => void;
 };
 
-const Nav = ({ containerStyles, linkStyles, underlineStyles, onClick }: NavProps) => {
+const Nav = ({ containerStyles, linkStyles, underlineStyles, close }: NavProps) => {
   const path = usePathname();
   const [showAlert, setShowAlert] = useState(false);
   const [t, i18n] = useTranslation("global");
@@ -30,7 +30,11 @@ const Nav = ({ containerStyles, linkStyles, underlineStyles, onClick }: NavProps
   const handleLinkClick = (linkPath: string, event: React.MouseEvent) => {
     if (linkPath === "/projects") {
       event.preventDefault();
-      setShowAlert(true);
+    }
+    if (close) {
+      setTimeout(() => {
+        close();
+      }, 300);
     }
   };
 
