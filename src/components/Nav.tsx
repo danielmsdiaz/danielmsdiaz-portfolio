@@ -28,10 +28,11 @@ const Nav = ({ containerStyles, linkStyles, underlineStyles, close }: NavProps) 
   ];
 
   const handleLinkClick = (linkPath: string, event: React.MouseEvent) => {
-    if (linkPath === "/projects") {
-      event.preventDefault();
-    }
     if (close) {
+      if (linkPath === "/projects") {
+        event.preventDefault();
+        return setShowAlert(true);
+      }
       setTimeout(() => {
         close();
       }, 300);
@@ -64,7 +65,7 @@ const Nav = ({ containerStyles, linkStyles, underlineStyles, close }: NavProps) 
 
       {showAlert && (
         <Alert
-          onClose={() => setShowAlert(false)}
+          closeNav={close as () => void} onClose={() => setShowAlert(false)}
         />
       )}
     </>

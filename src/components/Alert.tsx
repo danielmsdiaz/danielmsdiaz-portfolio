@@ -14,10 +14,18 @@ import { useTranslation } from "react-i18next"
 
 type AlertProps = {
     onClose: () => void;
+    closeNav: () => void;
 };
 
-const Alert = ({ onClose }: AlertProps) => {
+const Alert = ({ onClose, closeNav }: AlertProps) => {
     const [t, i18n] = useTranslation("global");
+
+    const handleCloseBtn = () => {
+        onClose();
+        setTimeout(() => {
+            closeNav();
+        }, 200);
+    }
 
     return (
         <AlertDialog open onOpenChange={onClose}>
@@ -29,7 +37,7 @@ const Alert = ({ onClose }: AlertProps) => {
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                    <AlertDialogCancel onClick={onClose}>{t("alert.button")}</AlertDialogCancel>
+                    <AlertDialogCancel onClick={handleCloseBtn}>{t("alert.button")}</AlertDialogCancel>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
