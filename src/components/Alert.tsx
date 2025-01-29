@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next"
 
 type AlertProps = {
     onClose: () => void;
-    closeNav: () => void;
+    closeNav?: () => void;
 };
 
 const Alert = ({ onClose, closeNav }: AlertProps) => {
@@ -23,7 +23,9 @@ const Alert = ({ onClose, closeNav }: AlertProps) => {
     const handleCloseBtn = () => {
         onClose();
         setTimeout(() => {
-            closeNav();
+            if(closeNav){
+                closeNav();
+            }
         }, 200);
     }
 
