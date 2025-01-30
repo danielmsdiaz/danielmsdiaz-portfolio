@@ -37,7 +37,7 @@ const ProjectCard = ({ index, item }: { index: number, item: Project }) => {
           })}
         </div> */}
         <h4 className="h4">{item.name}</h4>
-        <p className="text-muted-foreground h-[120px] sm:h-min pr-3 text-lg overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-primary dark:scrollbar-thumb-darkMode scrollbar-track-slate-300">{item.description}</p>
+        <p className="text-muted-foreground h-[120px] md:h-[85px] sm:h-min pr-3 text-lg overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-primary dark:scrollbar-thumb-darkMode scrollbar-track-slate-300">{item.description}</p>
         <div className="flex justify-center sm:justify-start mb-3 mt-5 sm:mt-3">
           <Badge
             className={`${(item.status === "COMPLETED" || item.status === "COMPLETO")
