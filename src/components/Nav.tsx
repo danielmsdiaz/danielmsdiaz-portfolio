@@ -28,15 +28,13 @@ const Nav = ({ containerStyles, linkStyles, underlineStyles, close }: NavProps) 
   ];
 
   const handleLinkClick = (linkPath: string, event: React.MouseEvent) => {
-    if (close) {
       if (linkPath === "/projects") {
         event.preventDefault();
         return setShowAlert(true);
       }
       setTimeout(() => {
-        close();
+        close ? close() : "";
       }, 300);
-    }
   };
 
   return (

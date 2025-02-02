@@ -37,11 +37,11 @@ const NewReview = ({ item}: { item?: Review}) => {
                     <CardHeader className="flex flex-row w-full justify-start gap-x-2 items-center">
                         <Image src="/review/review-profile.png" alt="" width={60} height={60} />
                         <div className="flex flex-col items-start text-center w-full">
-                            <CardTitle className="font-semibold max-w-[200px] truncate overflow-hidden text-ellipsis whitespace-nowrap">{item.name}</CardTitle>
+                            <CardTitle className="font-semibold max-w-[200px] truncate overflow-hidden text-ellipsis whitespace-nowrap break-words">{item.name}</CardTitle>
                             <CardDescription className="text-sm max-w-[200px] truncate overflow-hidden text-ellipsis whitespace-nowrap">{item.role}</CardDescription>
                         </div>
                     </CardHeader>
-                    <CardContent className="text-left h-[200px] overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-primary dark:scrollbar-thumb-darkMode scrollbar-track-slate-300 mr-2 break-all hyphens-auto">
+                    <CardContent className="text-left h-[200px] overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-primary dark:scrollbar-thumb-darkMode scrollbar-track-slate-300 mr-2 hyphens-auto">
                         {item.review}
                     </CardContent>
                     <CardFooter className="mx-auto">
