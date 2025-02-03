@@ -21,6 +21,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>Daniel Diaz | Desenvolvedor Fullstack</title>
+        <meta name="description" content="Desenvolvedor Fullstack apaixonado por tecnologia. Explore meus projetos e entre em contato!" />
+
+        <meta property="og:title" content="Daniel Diaz | Desenvolvedor Fullstack" />
+        <meta property="og:description" content="Confira meu portfólio e conheça mais sobre meu trabalho como desenvolvedor Fullstack." />
+        <meta property="og:image" content="/images/preview.png" />
+        <meta property="og:url" content="https://danielmsdiaz-portfolio.vercel.app/" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Daniel Diaz | Desenvolvedor Fullstack" />
+        <meta name="twitter:description" content="Desenvolvedor Fullstack apaixonado por tecnologia. Explore meus projetos!" />
+        <meta name="twitter:image" content="/preview/preview.png" />
+        <link rel="icon" href="/icon.png" />
+
+        <meta name="theme-color" content="#0d1117" />
+      </head>
+
       <body className={outfit.className}>
         <ThemeProvider attribute='class' defaultTheme='light'>
           <I18nextProvider i18n={i18n}>
