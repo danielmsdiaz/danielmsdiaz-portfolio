@@ -22,19 +22,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Daniel Diaz | Desenvolvedor Fullstack</title>
-        <meta name="description" content="Desenvolvedor Fullstack apaixonado por tecnologia. Explore meus projetos e entre em contato!" />
+        <title>Portfólio Daniel Diaz</title>
+        <meta name="description" content="Bem-vindo(a) ao meu portfólio!" />
 
-        <meta property="og:title" content="Daniel Diaz | Desenvolvedor Fullstack" />
-        <meta property="og:description" content="Confira meu portfólio e conheça mais sobre meu trabalho como desenvolvedor Fullstack." />
-        <meta property="og:image" content="/images/preview.png" />
+        <meta property="og:title" content="Portfólio Daniel Diaz" />
+        <meta property="og:description" content="Confira meu portfólio e meus projetos!" />
+        <meta property="og:image" content="https://danielmsdiaz-portfolio.vercel.app/preview/preview.png" />
         <meta property="og:url" content="https://danielmsdiaz-portfolio.vercel.app/" />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Daniel Diaz | Desenvolvedor Fullstack" />
-        <meta name="twitter:description" content="Desenvolvedor Fullstack apaixonado por tecnologia. Explore meus projetos!" />
-        <meta name="twitter:image" content="/preview/preview.png" />
+        <meta name="twitter:title" content="Portfólio Daniel Diaz" />
+        <meta name="twitter:description" content="Confira meu portfólio e meus projetos!" />
+        <meta name="twitter:image" content="https://danielmsdiaz-portfolio.vercel.app/preview/preview.png" />
         <link rel="icon" href="/icon.png" />
 
         <meta name="theme-color" content="#0d1117" />
