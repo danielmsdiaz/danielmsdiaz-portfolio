@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      {/* <head>
         <title>Portfólio Daniel Diaz</title>
         <meta name="description" content="Bem-vindo(a) ao meu portfólio!" />
 
@@ -38,7 +38,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.png" />
 
         <meta name="theme-color" content="#0d1117" />
-      </head>
+      </head> */}
 
       <body className={outfit.className}>
         <ThemeProvider attribute='class' defaultTheme='light'>
