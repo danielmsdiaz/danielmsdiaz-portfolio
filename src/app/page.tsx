@@ -13,7 +13,10 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://danielmsdiaz-portfolio.vercel.app/",
     images: [{
-      url: "/preview/preview.png"
+      url: "/preview/preview.png",
+      alt: "asd",
+      width: 1300,
+      height: 630
     }]
   }
 }
